@@ -5,6 +5,9 @@ import Signup from './modules/auth/Signup'
 import { useState } from 'react'
 import ProtectedRoute from './modules/tools/ProtectedRoute'
 import InitialPage from './modules/initialPage/InitialPage'
+import AgentCreatePackage from './modules/service/AgentCreatePackage'
+import MainTemplate from './modules/common/MainTemplate'
+
 
 function AppRoutes() {
   // const [isAuth, setIsAuth] = useState(false);
@@ -34,6 +37,13 @@ function AppRoutes() {
           element={
             <Signup type='agent' />
             // <Signup isAuth={setIsAuth} type='agent' />
+          }
+        />
+        <Route
+          path="/agent/create-package"
+          exact
+          element={
+            <MainTemplate component={AgentCreatePackage} />
           }
         />
         <Route

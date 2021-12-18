@@ -2,9 +2,9 @@ import "../common/authBase.css"
 import React, { useState } from "react";
 import { Navigate } from 'react-router-dom';
 
-async function signupUser(credentials) {
+async function signupUser(credentials, type) {
   // console.log(JSON.stringify(credentials))
-  return fetch("http://localhost:3333/agent", {
+  return fetch(`http://localhost:3333/${type}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -44,13 +44,14 @@ function Signin(props) {
         "password": password,
         "email": email,
         "company": company
-      });
+      }, type);
     }
-    //caso o token não esteja vazio
-    if (token) {
-      isAuth(true)
-      return <Navigate to={{ pathname: '/' }} /> //teste
-    }
+
+    //tirar pois: não quero logar pelo signup.
+    // if (token) {
+    //   sessionStorage.setItem('token', JSON.stringify(token.id));
+    //   return <Navigate to={{ pathname: '/' }} /> //teste
+    // }
 
     console.log(token)
   }
