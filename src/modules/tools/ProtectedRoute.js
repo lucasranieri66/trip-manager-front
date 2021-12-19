@@ -4,7 +4,7 @@ import { isAuthenticated } from './authenticated';
 
 // function ProtectedRoute({ isAuth, component: Component, ...rest }) {
 function ProtectedRoute({ protected: Component, type: type, ...rest }) {
-    if (isAuthenticated()) {
+    if (isAuthenticated(type)) {
         return < Component {...rest} />;
     } else {
         return (

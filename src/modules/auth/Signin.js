@@ -40,6 +40,7 @@ function Signin(props) {
       console.log("o login é possível")
       sessionStorage.clear()
       sessionStorage.setItem('token', JSON.stringify(token.id))
+      sessionStorage.setItem('type', type)
       navigate('/')
       // return <Navigate to={{ "pathname": '../' }} /> //teste
     }
