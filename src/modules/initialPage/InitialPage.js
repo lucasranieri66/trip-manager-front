@@ -15,10 +15,10 @@ function InitialPage(props) {
                             <h1>InitialPage</h1>
                         </div>
                         <div id='loginType' style={{ display: "flex", flexDirection: "column", fontSize: '20px' }}>
-                            <a href='/agent/signin' style={{ marginTop: "5px" }}> Login - Agente de viagem </a>
-                            <a href='/traveller/signin' style={{ marginTop: "5px" }}> Login - Viajante </a>
-                            <a href='/agent/create-package' style={{ marginTop: "5px" }}>Área do agente</a>
-                            <a href='#' style={{ marginTop: "5px" }}>Área do viajante</a>
+                            <a href='/agent/signin' style={{ marginTop: "3px" }}> Login - Agente de viagem </a>
+                            <a href='/traveller/signin' style={{ marginTop: "3px" }}> Login - Viajante </a>
+                            <a href='/agent/create-package' style={{ marginTop: "3px" }}>Área do agente</a>
+                            <a href='#' style={{ marginTop: "3px" }}>Área do viajante</a>
                         </div>
                     </div>
 

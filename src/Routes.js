@@ -38,9 +38,7 @@ function AppRoutes() {
         <Route
           path="/agent/create-package"
           exact
-          element={
-            <MainTemplate component={AgentCreatePackage} />
-          }
+          element={<ProtectedRoute protected={MainTemplate} type='agent' component={AgentCreatePackage} />}
         />
         <Route
           path="/traveller/signin"
@@ -56,7 +54,7 @@ function AppRoutes() {
             <Signup type='traveller' />
           }
         />
-        <Route path="/test" element={<ProtectedRoute component={Test} type='agent' />} />
+        <Route path="/test" element={<ProtectedRoute protected={Test} type='agent' />} />
 
       </Routes>
     </Router>
