@@ -47,12 +47,6 @@ function Signin(props) {
       }, type);
     }
 
-    //tirar pois: não quero logar pelo signup.
-    // if (token) {
-    //   sessionStorage.setItem('token', JSON.stringify(token.id));
-    //   return <Navigate to={{ pathname: '/' }} /> //teste
-    // }
-
     console.log(token)
   }
 

@@ -1,9 +1,10 @@
 import '../common/authBase.css'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 
-async function loginUser(credentials) {
-  return fetch('http://localhost:8080/login', {
+async function loginUser(credentials, type) {
+  return fetch(`http://localhost:3333/${type}-signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -11,6 +12,9 @@ async function loginUser(credentials) {
     body: JSON.stringify(credentials)
   })
     .then(data => data.json())
+    .catch(err => {
+      throw new Error(err)
+    })
 }
 
 function Signin(props) {
@@ -27,14 +31,17 @@ function Signin(props) {
     const token = await loginUser({
       username,
       password
-    });
+    }, type);
     // setToken(token);
 
     //caso o token não esteja vazio
-    if (token) {
-      isAuth(true)
+    if ('id' in token) {
+      console.log("o login é possível")
+      sessionStorage.clear()
+      sessionStorage.setItem('token', JSON.stringify(token.id));
+      return <Navigate to={{ "pathname": '../' }} /> //teste
     }
-
+    console.log("o login não é possível")
     console.log(token)
   }
 

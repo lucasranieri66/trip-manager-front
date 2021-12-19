@@ -4,11 +4,11 @@ import { isAuthenticated } from './authenticated';
 
 // function ProtectedRoute({ isAuth, component: Component, ...rest }) {
 function ProtectedRoute({ component: Component, ...rest }) {
-    if (isAuthenticated) {
+    if (isAuthenticated()) {
         return < Component {...rest} />;
     } else {
         return (
-            <Navigate to={{ pathname: '/signin' }} />
+            <Navigate to={{ pathname: '/' }} />
         );
     }
 }
