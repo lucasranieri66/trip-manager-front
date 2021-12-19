@@ -2,6 +2,7 @@ import '../common/authBase.css'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 async function loginUser(credentials, type) {
   return fetch(`http://localhost:3333/${type}-signin`, {
@@ -19,9 +20,9 @@ async function loginUser(credentials, type) {
 
 function Signin(props) {
   const {
-    isAuth,
     type
   } = props
+  const navigate = useNavigate()
 
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
@@ -38,8 +39,9 @@ function Signin(props) {
     if ('id' in token) {
       console.log("o login é possível")
       sessionStorage.clear()
-      sessionStorage.setItem('token', JSON.stringify(token.id));
-      return <Navigate to={{ "pathname": '../' }} /> //teste
+      sessionStorage.setItem('token', JSON.stringify(token.id))
+      navigate('/')
+      // return <Navigate to={{ "pathname": '../' }} /> //teste
     }
     console.log("o login não é possível")
     console.log(token)

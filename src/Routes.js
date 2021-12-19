@@ -10,7 +10,6 @@ import MainTemplate from './modules/common/MainTemplate'
 
 
 function AppRoutes() {
-  // const [isAuth, setIsAuth] = useState(false);
 
   return (
     <Router>
@@ -20,7 +19,6 @@ function AppRoutes() {
           exact
           element={
             <InitialPage />
-            // <InitialPage isAuth={isAuth} />
           }
         />
         <Route
@@ -28,7 +26,6 @@ function AppRoutes() {
           exact
           element={
             <Signin type='agent' />
-            // <Signin isAuth={setIsAuth} type='agent' />
           }
         />
         <Route
@@ -36,7 +33,6 @@ function AppRoutes() {
           exact
           element={
             <Signup type='agent' />
-            // <Signup isAuth={setIsAuth} type='agent' />
           }
         />
         <Route
@@ -51,7 +47,6 @@ function AppRoutes() {
           exact
           element={
             <Signin type='traveller' />
-            // <Signin isAuth={setIsAuth} type='traveller' />
           }
         />
         <Route
@@ -59,11 +54,9 @@ function AppRoutes() {
           exact
           element={
             <Signup type='traveller' />
-            // <Signup isAuth={setIsAuth} type='traveller' />
           }
         />
-        <Route path="/test" element={<ProtectedRoute component={Test} />} />
-        {/* <Route path="/test" element={<ProtectedRoute isAuth={isAuth} component={Test} />} /> */}
+        <Route path="/test" element={<ProtectedRoute component={Test} type='agent' />} />
 
       </Routes>
     </Router>

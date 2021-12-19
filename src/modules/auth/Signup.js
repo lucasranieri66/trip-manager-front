@@ -1,9 +1,8 @@
 import "../common/authBase.css"
 import React, { useState } from "react";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 async function signupUser(credentials, type) {
-  // console.log(JSON.stringify(credentials))
   return fetch(`http://localhost:3333/${type}`, {
     method: "POST",
     headers: {
@@ -17,11 +16,13 @@ async function signupUser(credentials, type) {
     })
 }
 
+
+
 function Signin(props) {
   const {
-    isAuth,
     type
   } = props
+  const navigate = useNavigate()
 
   const [username, setUsername] = useState();
   const [firstname, setFirstname] = useState();
@@ -33,7 +34,6 @@ function Signin(props) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    // console.log(`${username} ${password} ${confirmation} ${email} ${company} ${firstname} ${lastname}`)
 
     let token = {}
     if (password == confirmation) {
@@ -47,7 +47,22 @@ function Signin(props) {
       }, type);
     }
 
-    console.log(token)
+    if ("id" in token) {
+      navigate(`/${type}/signin`)
+    }
+  }
+
+  function showCompany(type) {
+
+    if (type == "agent") {
+      return (
+        < label >
+          <p>Nome da empresa</p>
+          <input type="text" onChange={e => setCompany(e.target.value)} />
+        </label>
+      )
+    }
+    return null
   }
 
   return (
@@ -59,42 +74,45 @@ function Signin(props) {
           </div>
           <div className="highlight">
             <form onSubmit={handleSubmit}>
-              <label>
-                <p>Usuario</p>
-                <input type="text" onChange={e => setUsername(e.target.value)} />
-              </label>
-              <label>
-                <p>Primeiro nome</p>
-                <input type="text" onChange={e => setFirstname(e.target.value)} />
-              </label>
-              <label>
-                <p>Ultimo nome</p>
-                <input type="text" onChange={e => setLastname(e.target.value)} />
-              </label>
-              <label>
-                <p>Email</p>
-                <input type="text" onChange={e => setEmail(e.target.value)} />
-              </label>
-              <label>
-                <p>Nome da empresa</p>
-                <input type="text" onChange={e => setCompany(e.target.value)} />
-              </label>
-              <label>
-                <p>Senha</p>
-                <input type="password" onChange={e => setPassword(e.target.value)} />
-              </label>
-              <label>
-                <p>Repita a senha</p>
-                <input type="password" onChange={e => setConfirmation(e.target.value)} />
-              </label>
               <div style={{ display: 'flex' }}>
-                <button type="submit">Submit</button>
-                <a href={`/${type}/signin`}> Voltar </a>
+                <div>
+                  <label>
+                    <p>Usuario</p>
+                    <input type="text" onChange={e => setUsername(e.target.value)} />
+                  </label>
+                  <label>
+                    <p>Primeiro nome</p>
+                    <input type="text" onChange={e => setFirstname(e.target.value)} />
+                  </label>
+                  <label>
+                    <p>Ultimo nome</p>
+                    <input type="text" onChange={e => setLastname(e.target.value)} />
+                  </label>
+                  <label>
+                    <p>Email</p>
+                    <input type="text" onChange={e => setEmail(e.target.value)} />
+                  </label>
+                </div>
+                <div style={{ marginLeft: '20px' }}>
+                  {showCompany(type)}
+                  <label>
+                    <p>Senha</p>
+                    <input type="password" onChange={e => setPassword(e.target.value)} />
+                  </label>
+                  <label>
+                    <p>Repita a senha</p>
+                    <input type="password" onChange={e => setConfirmation(e.target.value)} />
+                  </label>
+                  <div style={{ display: 'flex' }}>
+                    <button type="submit">Submit</button>
+                    <a href={`/${type}/signin`}> Voltar </a>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
-      </div>
+      </div >
     </div >
   );
 }

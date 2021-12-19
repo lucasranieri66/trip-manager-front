@@ -4,22 +4,24 @@ import './InitialPage.css';
 function InitialPage(props) {
     if (props.isAuth)
         return (
-            // obs: mudar de /signin para a tela principal
             <Navigate to={{ pathname: '/test' }} />
         );
     else
         return (
             <div className='absolute'>
-                <div id='initialPageContainer'>
+                <div id='initialPageContainer' style={{ display: "flex", flexDirection: "column" }}>
                     <div>
-                        <div id='initialPageLogo'>
+                        <div id='initialPageLogo' style={{ display: "inline-block" }}>
                             <h1>InitialPage</h1>
                         </div>
-                        <div id='loginType'>
-                            <a href='/agent/signin'> Agente de viagem </a>
-                            <a href='/traveller/signin'> Viajante </a>
+                        <div id='loginType' style={{ display: "flex", flexDirection: "column", fontSize: '20px' }}>
+                            <a href='/agent/signin' style={{ marginTop: "5px" }}> Login - Agente de viagem </a>
+                            <a href='/traveller/signin' style={{ marginTop: "5px" }}> Login - Viajante </a>
+                            <a href='/agent/create-package' style={{ marginTop: "5px" }}>Área do agente</a>
+                            <a href='#' style={{ marginTop: "5px" }}>Área do viajante</a>
                         </div>
                     </div>
+
                 </div>
             </div>
         );

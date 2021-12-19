@@ -13,7 +13,11 @@ a{
     height: 100%;
 
     color: rgb(242, 242, 242);
+
     background-image: url(../../images/InitialPage.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 #initialPageContainer{    
     position: relative;
