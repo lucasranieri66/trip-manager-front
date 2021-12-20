@@ -18,7 +18,7 @@ function InitialPage(props) {
                             <a href='/agent/signin' style={{ marginTop: "3px" }}> Login - Agente de viagem </a>
                             <a href='/traveller/signin' style={{ marginTop: "3px" }}> Login - Viajante </a>
                             <a href='/agent/create-package' style={{ marginTop: "3px" }}>Área do agente</a>
-                            <a href='#' style={{ marginTop: "3px" }}>Área do viajante</a>
+                            <a href='/traveller/view-package' style={{ marginTop: "3px" }}>Área do viajante</a>
                         </div>
                     </div>
 

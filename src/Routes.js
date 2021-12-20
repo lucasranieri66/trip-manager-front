@@ -7,8 +7,8 @@ import ProtectedRoute from './modules/tools/ProtectedRoute'
 import InitialPage from './modules/initialPage/InitialPage'
 import AgentCreatePackage from './modules/service/AgentCreatePackage'
 import AgentViewPackage from './modules/service/AgentViewPackage'
+import TravellerViewPackage from './modules/service/TravellerViewPackage'
 import MainTemplate from './modules/common/MainTemplate'
-
 
 function AppRoutes() {
 
@@ -59,6 +59,11 @@ function AppRoutes() {
           element={
             <Signup type='traveller' />
           }
+        />
+        <Route
+          path="/traveller/view-package"
+          exact
+          element={<ProtectedRoute protected={MainTemplate} type='traveller' component={TravellerViewPackage} />}
         />
         <Route path="/test" element={<ProtectedRoute protected={Test} type='agent' />} />
 
