@@ -70,7 +70,7 @@ function Signin(props) {
             </div>
           </form>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <Link to={'/agent/signup'}>Cadastre-se</Link>
+            <Link to={`/${type}/signup`}>Cadastre-se</Link>
             <Link to={'/'}>Voltar</Link>
           </div>
         </div>
