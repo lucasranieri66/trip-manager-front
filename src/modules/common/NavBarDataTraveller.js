@@ -3,7 +3,7 @@ import './MainTemplate.css'
 
 export const NavBarDataTraveller = [
     {
-        title: 'Ver pacote',
+        title: 'Ver pacotes',
         path: '/traveller/view-package',
         icon: <FaIcons.FaPassport color='grey' />,
         cName: 'nav-text'

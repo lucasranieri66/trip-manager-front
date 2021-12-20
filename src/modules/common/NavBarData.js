@@ -4,13 +4,13 @@ import './MainTemplate.css'
 
 export const NavBarData = [
     {
-        title: 'Criar pacote',
+        title: 'Criar pacotes',
         path: '/agent/create-package',
         icon: <GoIcons.GoPackage color='grey' />,
         cName: 'nav-text'
     },
     {
-        title: 'Ver pacote',
+        title: 'Ver pacotes',
         path: '/agent/view-package',
         icon: <FaIcons.FaPassport color='grey' />,
         cName: 'nav-text'
