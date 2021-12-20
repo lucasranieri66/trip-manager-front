@@ -45,7 +45,7 @@ a{
 }
 .highlight{
     display: inline-block;
-    background-color: rgba(218, 142, 2, 0.199);
+    /* background-color: rgba(218, 142, 2, 0.199); */
     padding: 10px;
 
 }

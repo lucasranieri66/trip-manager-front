@@ -51,12 +51,12 @@ function Signin(props) {
 
   return (
     <div className='absolute'>
-      <div id='initialPageContainer'>
-        <div>
+      <div id='initialPageContainer' >
+        <div className='teste'>
           <div id='initialPageLogo'>
             <h1>Bem-Vindo {type == 'agent' ? 'Agente' : 'Viajante'}: faça seu login</h1>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='teste'>
             <label>
               <p>Usuario</p>
               <input type="text" onChange={e => setUserName(e.target.value)} />
@@ -66,11 +66,13 @@ function Signin(props) {
               <input type="password" onChange={e => setPassword(e.target.value)} />
             </label>
             <div>
-              <button type="submit">Submit</button>
+              <button type="submit" className=''>Submit</button>
             </div>
           </form>
-          <Link to={'/agent/signup'}>Cadastre-se</Link>
-          <Link to={'/'}>Voltar</Link>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Link to={'/agent/signup'}>Cadastre-se</Link>
+            <Link to={'/'}>Voltar</Link>
+          </div>
         </div>
       </div>
     </div>

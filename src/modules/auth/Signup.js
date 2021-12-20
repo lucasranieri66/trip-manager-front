@@ -66,16 +66,16 @@ function Signin(props) {
   }
 
   return (
-    <div className="absolute">
-      <div id="initialPageContainer">
-        <div>
-          <div id="initialPageLogo">
+    <div className="absolute" >
+      <div id="initialPageContainer" className="teste">
+        <div className="teste">
+          <div id="initialPageLogo" className="teste">
             <h1>Bem-Vindo {type == "agent" ? "Agente" : "Viajante"}: faça seu cadastro</h1>
           </div>
-          <div className="highlight">
+          <div className="">
             <form onSubmit={handleSubmit}>
               <div style={{ display: 'flex' }}>
-                <div>
+                <div className="teste">
                   <label>
                     <p>Usuario</p>
                     <input type="text" onChange={e => setUsername(e.target.value)} />
@@ -93,7 +93,7 @@ function Signin(props) {
                     <input type="text" onChange={e => setEmail(e.target.value)} />
                   </label>
                 </div>
-                <div style={{ marginLeft: '20px' }}>
+                <div style={{ marginLeft: '20px' }} className="teste">
                   {showCompany(type)}
                   <label>
                     <p>Senha</p>
