@@ -6,6 +6,7 @@ import { useState } from 'react'
 import ProtectedRoute from './modules/tools/ProtectedRoute'
 import InitialPage from './modules/initialPage/InitialPage'
 import AgentCreatePackage from './modules/service/AgentCreatePackage'
+import AgentViewPackage from './modules/service/AgentViewPackage'
 import MainTemplate from './modules/common/MainTemplate'
 
 
@@ -39,6 +40,11 @@ function AppRoutes() {
           path="/agent/create-package"
           exact
           element={<ProtectedRoute protected={MainTemplate} type='agent' component={AgentCreatePackage} />}
+        />
+        <Route
+          path="/agent/view-package"
+          exact
+          element={<ProtectedRoute protected={MainTemplate} type='agent' component={AgentViewPackage} />}
         />
         <Route
           path="/traveller/signin"

@@ -1,18 +1,18 @@
-import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
+import * as FaIcons from 'react-icons/fa';
+import * as GoIcons from 'react-icons/go';
 import './MainTemplate.css'
 
 export const NavBarData = [
     {
-        title: 'Home',
-        path: '#',
-        icon: <AiIcons.AiFillHome color='grey' />,
+        title: 'Criar pacote',
+        path: '/agent/create-package',
+        icon: <GoIcons.GoPackage color='grey' />,
         cName: 'nav-text'
     },
     {
-        title: 'Reports',
-        path: '#',
-        icon: <IoIcons.IoIosPaper color='grey' />,
+        title: 'Ver pacote',
+        path: '/agent/view-package',
+        icon: <FaIcons.FaPassport color='grey' />,
         cName: 'nav-text'
     },
 ]

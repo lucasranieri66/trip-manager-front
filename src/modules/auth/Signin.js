@@ -41,6 +41,7 @@ function Signin(props) {
       sessionStorage.clear()
       sessionStorage.setItem('token', JSON.stringify(token.id))
       sessionStorage.setItem('type', type)
+      sessionStorage.setItem('agent', username)
       navigate('/')
       // return <Navigate to={{ "pathname": '../' }} /> //teste
     }
